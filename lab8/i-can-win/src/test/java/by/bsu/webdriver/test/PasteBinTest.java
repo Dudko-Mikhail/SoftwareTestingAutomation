@@ -3,6 +3,7 @@ package by.bsu.webdriver.test;
 import by.bsu.webdriver.pageobject.PasteBinHomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -13,6 +14,8 @@ public class PasteBinTest {
 
     @BeforeTest(alwaysRun = true)
     public void setUpBrowser() {
+        FirefoxOptions options = new FirefoxOptions();
+        options.setHeadless(true);
         driver = new FirefoxDriver();
     }
 
