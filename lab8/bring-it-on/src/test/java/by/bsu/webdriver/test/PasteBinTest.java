@@ -4,6 +4,7 @@ import by.bsu.webdriver.pageobject.PasteBinCreatePasteResultPage;
 import by.bsu.webdriver.pageobject.PasteBinHomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -18,15 +19,16 @@ public class PasteBinTest {
     private PasteBinCreatePasteResultPage resultPage;
 
     @BeforeClass(alwaysRun = true)
-    public void setUpBrowserAndCreatePaste() throws Throwable {
-        driver = new FirefoxDriver();
+    public void setUpBrowserAndCreatePaste() {
+        FirefoxOptions options = new FirefoxOptions();
+        options.setHeadless(true);
+        driver = new FirefoxDriver(options);
         resultPage = new PasteBinHomePage(driver).openPage()
                                                  .inputPasteText(PASTE_TEXT)
                                                  .selectSyntaxHighlighting()
                                                  .selectPasteExpiration()
                                                  .inputPasteNameOrTitle(TITLE)
                                                  .createNewPaste();
-        Thread.sleep(5000);
     }
 
     @Test
