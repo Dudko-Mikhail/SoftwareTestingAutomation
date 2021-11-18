@@ -1,0 +1,16 @@
+2021-10-13 17:07:35.746 [Thread-2] ERROR bsu.shapetask.reader.impl.CustomFileReaderImpl - method=readLines msg=Catching
+java.nio.file.AccessDeniedException: D:\JavaWebDevelopment\shapes\src\main\java\by\bsu\shapetask\utils
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:380) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:432) ~[?:?]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422) ~[?:?]
+	at java.nio.file.Files.newInputStream(Files.java:160) ~[?:?]
+	at java.nio.file.Files.newBufferedReader(Files.java:2922) ~[?:?]
+	at java.nio.file.Files.readAllLines(Files.java:3412) ~[?:?]
+	at java.nio.file.Files.readAllLines(Files.java:3453) ~[?:?]
+	at by.bsu.shapetask.reader.impl.CustomFileReaderImpl.readLines(CustomFileReaderImpl.java:27) ~[classes/:?]
+	at by.bsu.shapetask.App.lambda$main$0(App.java:19) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
