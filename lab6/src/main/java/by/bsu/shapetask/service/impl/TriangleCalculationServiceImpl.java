@@ -97,11 +97,17 @@ public class TriangleCalculationServiceImpl implements TriangleCalculationServic
         int distinctSidesCount = (int) Arrays.stream(sides)
                                              .distinct()
                                              .count();
-        return Optional.of(switch (distinctSidesCount) {
-            case 1 -> TriangleTypeBySides.EQUILATERAL;
-            case 2 -> TriangleTypeBySides.ISOSCELES;
-            default -> TriangleTypeBySides.SCALENE;
-        });
+        Optional<TriangleTypeBySides> resultType;
+        if (distinctSidesCount == 1) {
+            resultType = Optional.of(TriangleTypeBySides.EQUILATERAL);
+        }
+        else if (distinctSidesCount == 2) {
+            resultType = Optional.of(TriangleTypeBySides.ISOSCELES);
+        }
+        else {
+            resultType = Optional.of(TriangleTypeBySides.SCALENE);
+        }
+        return resultType;
     }
 
     @Override

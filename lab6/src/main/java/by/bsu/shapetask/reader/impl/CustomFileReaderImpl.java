@@ -2,12 +2,11 @@ package by.bsu.shapetask.reader.impl;
 
 import by.bsu.shapetask.exception.CustomReaderException;
 import by.bsu.shapetask.reader.CustomFileReader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class CustomFileReaderImpl implements CustomFileReader {
         if (filePath == null) {
             throw new CustomReaderException("Cannot read from file: filePath is null");
         }
-        Path path = Path.of(filePath);
+        Path path = Paths.get(filePath);
         if (!Files.exists(path)) {
             throw new CustomReaderException("File " + path.normalize() + " doesn't exist");
         }
