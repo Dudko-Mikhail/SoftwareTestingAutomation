@@ -11,9 +11,9 @@ public class WebDriverHolder {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
-        System.out.println(System.getenv("browser"));
         if (driver == null) {
-            BrowserType type = BrowserType.valueOf(System.getProperty(BROWSER_PROPERTY));
+            String browser = System.getenv(BROWSER_PROPERTY).toUpperCase();
+            BrowserType type = BrowserType.valueOf(browser);
             switch (type) {
                 case CHROME: {
                     WebDriverManager.chromedriver().setup();
