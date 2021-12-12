@@ -11,6 +11,7 @@ public class WebDriverHolder {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
+        System.out.println(System.getenv("browser"));
         if (driver == null) {
             BrowserType type = BrowserType.valueOf(System.getProperty(BROWSER_PROPERTY));
             switch (type) {
