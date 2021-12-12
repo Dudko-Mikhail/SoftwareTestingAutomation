@@ -12,7 +12,7 @@ public class WebDriverHolder {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = System.getenv(BROWSER_PROPERTY).toUpperCase();
+            String browser = System.getProperty(BROWSER_PROPERTY).toUpperCase();
             BrowserType type = BrowserType.valueOf(browser);
             switch (type) {
                 case CHROME: {
