@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class VisaSearchData {
     private String country;
     private String entryType;
-    private String purpose;
 }

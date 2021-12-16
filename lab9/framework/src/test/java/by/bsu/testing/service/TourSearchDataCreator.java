@@ -3,17 +3,17 @@ package by.bsu.testing.service;
 import by.bsu.testing.model.TourSearchData;
 
 public class TourSearchDataCreator {
-    private static final String COUNTRY_TO_PROPERTY = "tour.countryTo";
-    private static final String CITY_TO_PROPERTY = "tour.cityTo";
-    private static final String CITY_FROM_PROPERTY = "tour.cityFrom";
-    private static final String MONEY_LIMIT_PROPERTY = "tour.moneyLimit";
+    private static final String DESTINATION_COUNTRY_PROPERTY = "tour.destinationCountry";
+    private static final String DESTINATION_CITY_PROPERTY = "tour.destinationCity";
+    private static final String DEPARTURE_CITY_PROPERTY = "tour.departureCity";
+    private static final String PRICE_PROPERTY = "tour.price";
 
-    public TourSearchData withDataFromProperties() {
+    public static TourSearchData withDataFromProperties() {
         TourSearchData searchData = new TourSearchData();
-        searchData.setCountryTo(TestDataReader.getTestData(COUNTRY_TO_PROPERTY));
-        searchData.setCityTo(TestDataReader.getTestData(CITY_TO_PROPERTY));
-        searchData.setCityFrom(TestDataReader.getTestData(CITY_FROM_PROPERTY));
-        searchData.setMoneyLimit(TestDataReader.getTestData(MONEY_LIMIT_PROPERTY));
+        searchData.setDestinationCountry(TestDataReader.getTestData(DESTINATION_COUNTRY_PROPERTY));
+        searchData.setDestinationCity(TestDataReader.getTestData(DESTINATION_CITY_PROPERTY));
+        searchData.setDepartureCity(TestDataReader.getTestData(DEPARTURE_CITY_PROPERTY));
+        searchData.setPrice(TestDataReader.getTestData(PRICE_PROPERTY));
         return searchData;
     }
 }

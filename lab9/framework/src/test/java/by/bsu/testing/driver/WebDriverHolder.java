@@ -12,24 +12,29 @@ public class WebDriverHolder {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = System.getProperty(BROWSER_PROPERTY).toUpperCase();
-            BrowserType type = BrowserType.valueOf(browser);
-            switch (type) {
-                case CHROME: {
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-                    break;
+            String browser = System.getProperty(BROWSER_PROPERTY);
+            if (browser != null) {
+                BrowserType type = BrowserType.valueOf(browser.toUpperCase());
+                switch (type) {
+                    case CHROME: {
+                        WebDriverManager.chromedriver().setup();
+                        driver = new ChromeDriver();
+                        break;
+                    }
+                    case EDGE: {
+                        WebDriverManager.edgedriver().setup();
+                        driver = new EdgeDriver();
+                        break;
+                    }
+                    default: {
+                        WebDriverManager.firefoxdriver().setup();
+                        driver = new FirefoxDriver();
+                        break;
+                    }
                 }
-                case EDGE: {
-                    WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver();
-                    break;
-                }
-                default: {
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                    break;
-                }
+            } else {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
             }
         }
         return driver;
@@ -37,7 +42,7 @@ public class WebDriverHolder {
 
     public static void closeDriver() {
         if (driver != null) {
-            driver.quit();;
+            driver.quit();
             driver = null;
         }
     }

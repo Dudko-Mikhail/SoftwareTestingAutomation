@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TourSearchData {
-    private String countryTo;
-    private String cityTo;
-    private String cityFrom;
-    private String moneyLimit;
+    private String destinationCountry;
+    private String destinationCity;
+    private String departureCity;
+    private String price;
 }
