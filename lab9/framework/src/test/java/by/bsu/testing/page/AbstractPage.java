@@ -16,6 +16,7 @@ public abstract class AbstractPage {
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
+        driver.manage().window().fullscreen();
         AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, WAIT_TIMEOUT_SECONDS);
         PageFactory.initElements(factory, this);
     }
