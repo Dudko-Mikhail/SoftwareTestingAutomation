@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class TourSearchResultPage extends AbstractPage {
 
-    @FindBy(xpath = "//*[@id='select2-select-country-container']")
+    @FindBy(id = "select2-select-country-container")
     private WebElement destinationCountry;
 
-    @FindBy(xpath = "//*[@id='select2-select-city-container']")
+    @FindBy(id = "select2-select-city-container")
     private WebElement destinationCity;
 
-    @FindBy(xpath = "//*[@id='select2-departure-container']")
+    @FindBy(id = "select2-departure-container")
     private WebElement departureCity;
 
 
