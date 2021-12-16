@@ -27,37 +27,34 @@ public class TravellingBySearchTest extends CommonConditions {
         homePage = new TravellingByHomePage(driver);
     }
 
-//    @Test
-//    public void testDestinationCountrySearchField() {
-//        TourSearchResultPage tourSearchResultPage = homePage.selectDestinationCountry(searchData.getDestinationCountry())
-//                        .findTours();
-//        Assert.assertEquals(tourSearchResultPage.getDestinationCountry(), searchData.getDestinationCountry());
-//    }
-//
-//    @Test(priority = 1)
-//    public void testDestinationCitySearchField() {
-//        TourSearchResultPage tourSearchResultPage = homePage.selectDestinationCountry(searchData.getDestinationCountry())
-//                .selectDestinationCity(searchData.getDestinationCity())
-//                .findTours();
-//        Assert.assertEquals(tourSearchResultPage.getDestinationCity(), searchData.getDestinationCity());
-//    }
-//
-//    @Test
-//    public void testDepartureCitySearchField() {
-//        TourSearchResultPage tourSearchResultPage = homePage.selectDepartureCity(searchData.getDepartureCity())
-//                .findTours();
-//        Assert.assertEquals(tourSearchResultPage.getDepartureCity(), searchData.getDepartureCity());
-//    }
-//
-//    @Test(priority = 2)
-//    public void testAllSearchFieldTogether() {
-//        TourSearchResultPage tourSearchResultPage = homePage.searchForTerms(searchData)
-//                .findTours();
-//        Assert.assertTrue(tourSearchResultPage.getDestinationCountry().equals(searchData.getDestinationCountry())
-//                && tourSearchResultPage.getDestinationCity().equals(searchData.getDestinationCity())
-//                && tourSearchResultPage.getDepartureCity().equals(searchData.getDepartureCity()));
-//    }
     @Test
-    public void nothing() {}
+    public void testDestinationCountrySearchField() {
+        TourSearchResultPage tourSearchResultPage = homePage.selectDestinationCountry(searchData.getDestinationCountry())
+                        .findTours();
+        Assert.assertEquals(tourSearchResultPage.getDestinationCountry(), searchData.getDestinationCountry());
+    }
 
+    @Test(priority = 1)
+    public void testDestinationCitySearchField() {
+        TourSearchResultPage tourSearchResultPage = homePage.selectDestinationCountry(searchData.getDestinationCountry())
+                .selectDestinationCity(searchData.getDestinationCity())
+                .findTours();
+        Assert.assertEquals(tourSearchResultPage.getDestinationCity(), searchData.getDestinationCity());
+    }
+
+    @Test
+    public void testDepartureCitySearchField() {
+        TourSearchResultPage tourSearchResultPage = homePage.selectDepartureCity(searchData.getDepartureCity())
+                .findTours();
+        Assert.assertEquals(tourSearchResultPage.getDepartureCity(), searchData.getDepartureCity());
+    }
+
+    @Test(priority = 2)
+    public void testAllSearchFieldTogether() {
+        TourSearchResultPage tourSearchResultPage = homePage.searchForTerms(searchData)
+                .findTours();
+        Assert.assertTrue(tourSearchResultPage.getDestinationCountry().equals(searchData.getDestinationCountry())
+                && tourSearchResultPage.getDestinationCity().equals(searchData.getDestinationCity())
+                && tourSearchResultPage.getDepartureCity().equals(searchData.getDepartureCity()));
+    }
 }
